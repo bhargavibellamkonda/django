@@ -1,0 +1,81 @@
+C:\Users\Nipuna>cd/
+
+C:\>python -m venv venv
+
+C:\>venv\Scripts\Activate
+
+(venv) C:\>djaango-admin startproject mysite
+
+
+(venv) C:\>django-admin startproject mysite
+
+(venv) C:\>cd mysite
+
+(venv) C:\mysite>pip install django
+
+(venv) C:\mysite>python manage.py startapp polls
+
+
+(venv) C:\mysite>code .
+
+(venv) C:\mysite>cd mysite
+
+(venv) C:\mysite\mysite>notepad settings.py
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'polls'
+]
+
+(venv) C:\mysite\mysite>cd..
+
+(venv) C:\mysite>cd polls
+
+(venv) C:\mysite\polls>notepad views.py
+
+from django.shortcuts import render
+from django.http import HttpResponse
+def index(request):
+   return HttpResponse("Hello ,world.You're at the pols index")
+
+(venv) C:\mysite\polls>notepad urls.py
+
+from django.urls import path
+from.import views
+urlpatterns=[
+   path(' ',views.index,name='index'),
+]
+
+(venv) C:\mysite\polls>cd..
+
+(venv) C:\mysite>cd mysite
+
+(venv) C:\mysite\mysite>notepad urls.py
+
+from django.contrib import admin
+from django.urls import include,path
+
+urlpatterns = [
+    path('polls/',include('polls.urls')),
+    path('admin/', admin.site.urls),
+]
+
+
+(venv) C:\mysite\mysite>cd..
+
+(venv) C:\mysite>python manage.py migrate
+
+(venv) C:\mysite>python manage.py runserver
+
+
+
+
+
+
+
+
